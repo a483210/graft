@@ -17,11 +17,10 @@ public class GraftServiceImpl implements GraftService {
 
     @PostEvent
     @Override
-    public String getGraftName(String content) {
-        if ("failure".equals(content)) {
+    public String graftPostEvent(String content) {
+        if (content.equals("failure")) {
             throw new IllegalStateException("failure");
         }
-
         return String.format("%s-%s", content, UUID.randomUUID().toString());
     }
 

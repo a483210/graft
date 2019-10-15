@@ -7,6 +7,6 @@ package com.psd.graft.service;
  */
 public interface GraftService {
 
-    String getGraftName(String content);
+    String graftPostEvent(String content);
 
 }

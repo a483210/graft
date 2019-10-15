@@ -1,5 +1,7 @@
 package com.psd.graft.loader;
 
+import com.psd.graft.event.UseType;
+
 import lombok.Data;
 
 /**
@@ -17,6 +19,8 @@ public class SubscribeValue {
 
     private Class<?> cls;
     private Class<? extends Throwable> throwableCls;
+
+    private UseType useFor;
 
     public SubscribeValue(String tag, String beanName, String methodName) {
         this.tag = tag;

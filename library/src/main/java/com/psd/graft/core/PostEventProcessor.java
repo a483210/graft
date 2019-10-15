@@ -37,11 +37,11 @@ public class PostEventProcessor {
 
         Object result;
         try {
+            loader.executeParamSubscribe(postEvent.value(), point.getArgs());
+
             result = point.proceed();
-            try {
-                loader.executeSubscribe(postEvent.value(), result);
-            } catch (Throwable ignore) {
-            }
+
+            loader.executeSubscribe(postEvent.value(), result);
         } catch (Throwable e) {
             loader.executeSubscribe(postEvent.value(), method.getReturnType(), e);
             throw e;

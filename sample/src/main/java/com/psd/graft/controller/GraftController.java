@@ -22,12 +22,12 @@ public class GraftController {
     private GraftService graftService;
 
     @GetMapping(value = "/get/{content}")
-    public String singleMessage(@PathVariable("content") String content) {
+    public String postEvent(@PathVariable("content") String content) {
         if (StringUtils.isEmpty(content)) {
             return "failure";
         }
 
-        return graftService.getGraftName(content);
+        return graftService.graftPostEvent(content);
     }
 
 }
